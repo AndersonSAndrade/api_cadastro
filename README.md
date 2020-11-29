@@ -13,8 +13,16 @@
 - [x] Validação de dados, Starter Validation, Bean Validation, Validando Entidades, Criação de annotation de validação customizada e intercionalização.
 - [x] Documentando código com Swagger.
 - [x] Testando Recursos gerais
-- [ ] Build e Deploy
 
+## Recomendações
+#### Projeto
+*Projeto feito com JAVA 8, Spring 2.2.4.RELEASE, Spring Data JPA, RESTFULL API, flywayDB, Lombok,
+Bean Validation, e Swagger2.*
+
+Projeto feito com dois ambientes (production e development), basta abrir o application.properties e selecionar qual ambiente deseja executar.
+
+API que realiza um cadastro básico com apenas nome, data de nascimento e foto,
+O cadastro tem como principal, realizar um CRUD básico.
 
 ## Profissional
 
@@ -22,4 +30,4 @@
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/anderson-s-andrade-59b38564/)](https://www.linkedin.com/in/anderson-s-andrade-59b38564/)
 
 ### Saber mais
-- [Website](https://andersonsandrade.github.io/adsdev.github.io/) 💻 - Curriculum.
+- [Website](https://andersonsandrade.github.io/adsdev.github.io/) 💻 - Especificações e Trabalhos.
