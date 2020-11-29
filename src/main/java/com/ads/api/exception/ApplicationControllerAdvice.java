@@ -1,17 +1,21 @@
 /*
- * Copyright (c) 2020. Olá todos os direitos reservados para IT CODE TECHS SYSTEMS.
- * Local do Arquivo: (/Users/andersons.andrade/Desktop/JAVA/SPRING/DEVELOPER/vendas/src/main/java/com/itcode/exception/ApplicationControllerAdvice.java)
- * Projeto: vendas -> vendas -> ApplicationControllerAdvice
+ * Copyright (c) 2020. Olá todos os direitos reservados para Anderson S. Andrade.
+ * Local do Arquivo: (/Users/andersons.andrade/Desktop/JAVA/SPRING/DEVELOPER/CADASTRO/api/src/main/java/com/ads/api/exception/ApplicationControllerAdvice.java)
+ * Projeto: api -> api -> ApplicationControllerAdvice
  * Criador: andersons.andrade
- * Última Modificação: 27/11/2020 04:35
+ * Última Modificação: 28/11/2020 01:10
  */
 
 package com.ads.api.exception;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestControllerAdvice
 public class ApplicationControllerAdvice {
@@ -27,5 +31,12 @@ public class ApplicationControllerAdvice {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ApiErros handlePedidoNotFoundException(UserNotFoudException ex){
         return new ApiErros(ex.getMessage());
+    }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ApiErros handleMethodNotValidException(MethodArgumentNotValidException ex){
+        List<String> erros = ex.getBindingResult().getAllErrors().stream().map(erro -> erro.getDefaultMessage()).collect(Collectors.toList());
+        return new ApiErros((erros));
     }
 }

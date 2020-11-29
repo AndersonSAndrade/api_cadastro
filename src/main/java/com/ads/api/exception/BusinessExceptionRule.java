@@ -1,9 +1,9 @@
 /*
- * Copyright (c) 2020. Olá todos os direitos reservados para IT CODE TECHS SYSTEMS.
- * Local do Arquivo: (/Users/andersons.andrade/Desktop/JAVA/SPRING/DEVELOPER/vendas/src/main/java/com/itcode/exception/BusinessExceptionRule.java)
- * Projeto: vendas -> vendas -> BusinessExceptionRule
+ * Copyright (c) 2020. Olá todos os direitos reservados para Anderson S. Andrade.
+ * Local do Arquivo: (/Users/andersons.andrade/Desktop/JAVA/SPRING/DEVELOPER/CADASTRO/api/src/main/java/com/ads/api/exception/BusinessExceptionRule.java)
+ * Projeto: api -> api -> BusinessExceptionRule
  * Criador: andersons.andrade
- * Última Modificação: 27/11/2020 01:26
+ * Última Modificação: 28/11/2020 10:05
  */
 
 package com.ads.api.exception;

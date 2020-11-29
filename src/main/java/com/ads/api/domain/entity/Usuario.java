@@ -13,6 +13,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @NoArgsConstructor
@@ -20,12 +22,15 @@ import java.time.LocalDate;
 @Data
 @Entity
 @Table(name = "usuario")
-public class User {
+public class Usuario{
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
+    @NotEmpty(message = "O Campo nome é obrigatório.")
     private String nome;
     @Column(name = "data_nascimento")
+    @NotNull(message = "O campo data de aniversário é obrigatório.")
     private LocalDate dataNascimento;
+    @Column(name = "foto", columnDefinition = "text")
     private String foto;
 }
