@@ -3,15 +3,17 @@
 
 ## Processos
 - [x] Criação da base do projeto API.
-- [ ] Configurações, Profiles Developer e Product.
-- [ ] Criando Entidade Usuario.
-- [ ] Criando Banco H2 para teste, e configurando conexão com o banco
-- [ ] Criando Script SQL com flyway
-- [ ] Criando Repositorios e JPARepository e Trabalhando com JPA.
-- [ ] Criando Controladores e Classe de Serviço.
-- [ ] Criando Exception Personalizada, Implementando Serviço, 
-- [ ] Validação de dados, Starter Validation, Bean Validation, Validando Entidades, Criação de annotation de validação customizada e intercionalização.
-
+- [x] Configurações, Profiles Developer e Product.
+- [x] Criando Entidade Usuario.
+- [x] Criando Banco H2 para teste, e configurando conexão com o banco
+- [x] Criando Script SQL com flyway
+- [x] Criando Repositorios e JPARepository e Trabalhando com JPA.
+- [x] Criando Controladores e Classe de Serviço.
+- [x] Criando Exception Personalizada, Implementando Serviço, 
+- [x] Validação de dados, Starter Validation, Bean Validation, Validando Entidades, Criação de annotation de validação customizada e intercionalização.
+- [x] Documentando código com Swagger.
+- [x] Testando Recursos gerais
+- [ ] Build e Deploy
 
 
 ## Profissional
