@@ -16,17 +16,25 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import lombok.RequiredArgsConstructor;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 
 import static org.springframework.http.HttpStatus.*;
@@ -38,6 +46,9 @@ import static org.springframework.http.HttpStatus.*;
 public class UserController {
 
         private final UserRepository repository;
+
+
+        private ServletContext servelt;
 
     @GetMapping()
     @ApiOperation("Obtendo todos ou Filtrando Usuários por nome")
@@ -54,7 +65,7 @@ public class UserController {
             @ApiResponse(code = 200, message = "Usuário encontrado."),
             @ApiResponse(code = 404, message = "Usuário não encontrado.")
     })
-    public Usuario getClienteById(@PathVariable Integer id){
+    public Usuario getUsuarioById(@PathVariable Integer id){
         return repository.findById(id).orElseThrow(() ->
                 new UserNotFoudException());
     }
@@ -86,7 +97,6 @@ public class UserController {
         }).orElseThrow(() ->
                 new UserNotFoudException());
     }
-
 
     @DeleteMapping("/{id}")
     @ResponseStatus(NO_CONTENT)

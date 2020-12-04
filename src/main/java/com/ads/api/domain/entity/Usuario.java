@@ -30,7 +30,7 @@ public class Usuario{
     private String nome;
     @Column(name = "data_nascimento")
     @NotNull(message = "O campo data de aniversário é obrigatório.")
-    private LocalDate dataNascimento;
-    @Column(name = "foto", columnDefinition = "text")
+    private String dataNascimento;
+    @Column(columnDefinition = "text")
     private String foto;
 }

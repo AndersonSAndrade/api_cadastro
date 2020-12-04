@@ -10,5 +10,5 @@ CREATE TABLE IF NOT EXISTS usuario (
    codigo int NOT NULL AUTO_INCREMENT PRIMARY KEY,
    nome varchar(100) NOT NULL ,
    foto text,
-   data_nascimento TIMESTAMP
+   data_nascimento varchar(10)
 )ENGINE=InnoDB DEFAULT CHARSET=UTF8;
